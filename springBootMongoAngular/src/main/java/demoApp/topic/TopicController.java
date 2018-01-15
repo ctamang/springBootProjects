@@ -15,31 +15,28 @@ public class TopicController {
 	@Autowired
 	private TopicService topicService;
 	
-	@Autowired
-	private TopicRepository topicRepository;
-	
 	@RequestMapping("/topics")
 	public List<Topic> getAllTopics(){
-		return topicRepository.findAll();
+		return topicService.getAllTopics();
 	}
 	
-	@RequestMapping("/topics/{id}")
+	@RequestMapping(method = RequestMethod.GET, value = "/topics/{id}")
 	public Topic getTopic(@PathVariable String id) {
 		return topicService.getTopic(id);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/topics")
 	public void addTopic(@RequestBody Topic topic) {
-		topicRepository.save(topic);
+		topicService.addTopic(topic);
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value = "/topics")
 	public void updateTopic(@RequestBody Topic topic) {
-		topicRepository.insert(topic);
+		topicService.updateTopic(topic);
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
 	public void deleteTopic(@PathVariable String id) {
-		topicRepository.delete(id);
+		topicService.deleteTopic(id);
 	}
 }
