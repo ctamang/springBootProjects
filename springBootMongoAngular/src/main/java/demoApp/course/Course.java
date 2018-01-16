@@ -1,11 +1,14 @@
 package demoApp.course;
 
+import javax.persistence.ManyToOne;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import demoApp.topic.Topic;
 
 @Document(collection = "Course")
+
 public class Course {
 	
 	@Id
@@ -13,6 +16,7 @@ public class Course {
 	private String name;
 	private String description;
 	
+	@ManyToOne
 	private Topic topic; 
 	public Course() {
 		
@@ -22,7 +26,7 @@ public class Course {
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.topic = new Topic(topicId, "", "");
+		this.setTopic(new Topic(topicId, "", ""));
 	}
 	public String getId() {
 		return id;
@@ -41,5 +45,11 @@ public class Course {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public Topic getTopic() {
+		return topic;
+	}
+	public void setTopic(Topic topic) {
+		this.topic = topic;
 	}
 }
