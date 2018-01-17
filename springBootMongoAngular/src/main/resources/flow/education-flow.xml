@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow.xsd">
+
+	<attribute name="rel" value="service" />
+	<attribute name="title" value="journey.title.educationFlow" />
+	<attribute name="name" value="educationFlow" />
+
+	<var name="useCaseModel" class="demoApp.course." />
+	
+	
+	<end-state id="donePage"/>
+</flow>
