@@ -7,15 +7,15 @@
       </encoder>
    </appender>
    
-   <logger name="demoApp" level="debug">
+   <!-- <logger name="demoApp" level="debug">
    		  <appender-ref ref="STDOUT" />
    </logger>
    
    <logger name="demoApp.topic" level="debug">
    		  <appender-ref ref="STDOUT" />
-   </logger>
+   </logger> -->
    	
-   <root level="info">
+  <root level="info">
       <appender-ref ref="STDOUT" />
    </root> 
 </configuration>
