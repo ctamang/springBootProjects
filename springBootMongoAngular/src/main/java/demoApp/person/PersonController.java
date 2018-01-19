@@ -44,8 +44,8 @@ public class PersonController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value= "/api/persons/query/{name}")
-	public void findByName(@PathVariable String name) {
+	public List<Person> findByName(@PathVariable String name) {
 		log.info("inside " + RequestMethod.GET + "parameters are : /api/persons/query/{name}");
-		personService.findByName(name);
+		return personService.findByName(name);
 	}
 }

@@ -31,8 +31,8 @@ public class PersonService {
 		personRepository.delete(id);
 	}
 
-	public void findByName(String name) {
-		personRepository.findByFirstName(name);
+	public List<Person> findByName(String name) {
+		return personRepository.findByFirstName(name);
 	}
 
 }

@@ -27,7 +27,7 @@ public class DbSeeder implements CommandLineRunner {
 	@Override
 	public void run(String... arg0) throws Exception {
 		
-	
+		this.personRepository.deleteAll();
 		log.info("inside" + DbSeeder.class + "uploading data to the db");
 		final Address address = new Address("floyd drive", "kalalazmoo", "california", "USA");
 		
@@ -49,7 +49,6 @@ public class DbSeeder implements CommandLineRunner {
 		Person person2 = new Person("deepac", "bangarwa", LocalDateTime.now(), address1, "IT specialist", 10000000, hobbies1);
 		
 		log.info("adding data to the " + Person.class);
-		//this.personRepository.deleteAll();
 		List<Person> persons = Arrays.asList(person1, person2);
 		
 		this.personRepository.save(persons);
