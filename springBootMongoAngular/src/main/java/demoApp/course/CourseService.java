@@ -3,7 +3,6 @@ package demoApp.course;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +14,8 @@ public class CourseService {
 	@Autowired
 	private CourseRepository courseRepository;
 	
-		public List<Course> getAllCourses(String id) {
-			ArrayList<Course> courses = new ArrayList<>();
-			courseRepository.findByTopicId(id).forEach(courses::add);
-			return courses;
+		public List<Course> getAllCourses() {
+			return courseRepository.findAll();
 		}
 		
 		public Course getCourse(String id) {

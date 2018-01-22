@@ -10,6 +10,8 @@ public class Address {
 	private String city;
 	private String country;
 	
+	protected Address(){}
+	
 	public Address(String addressLineOne, String addressLineTwo, String city, String country) {
 		super();
 		this.addressLineOne = addressLineOne;

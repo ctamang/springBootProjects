@@ -1,0 +1,27 @@
+<h2>Student Form</h2>
+<div class="card card-body mb-3">
+  <form>
+      <div class="form-group">
+        <label>FirstName</label>
+        <input type="text" class="form-control" name="firstName" #firstName>
+      </div>
+      <div class="form-group">
+        <label>LastName</label>
+        <input type="text" class="form-control" name="lastName" #lastName>
+      </div>
+      <div class="form-group">
+        <label>Profession</label>
+        <input type="text" class="form-control" name="profession" #profession>
+      </div>
+      <div class="form-group">
+        <label>DateOfBirth</label>
+        <input type="text" class="form-control" name="dob" #dob>
+      </div>
+      <div class="form-group">
+        <label>Salary</label>
+        <input type="text" class="form-control" name="salary" #salary>
+      </div>
+      <button (click)="addStudent(firstName.value, lastName.value, profession.value, dob.value, salary.value)" class="btn btn-dark btn-block">Add Student</button>
+  </form>
+
+</div>
