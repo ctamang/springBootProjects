@@ -1,0 +1,2 @@
+------to install bootstrap ----
+   npm install bootstrap jquery popper.js

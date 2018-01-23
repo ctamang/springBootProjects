@@ -8,6 +8,6 @@ export interface Person {
     profession : string,
     salary : number,
     address : Address,
-    hobby : Hobby[], 
+    hobby : any[], 
     course : Course;
 }
