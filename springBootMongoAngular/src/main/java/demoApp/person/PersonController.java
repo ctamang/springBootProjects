@@ -15,28 +15,29 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @CrossOrigin(origins = "*")
+@RequestMapping("/api/persons")
 public class PersonController {
 
 	@Autowired
 	private PersonService personService;
 	
-	@RequestMapping("/api/persons")
+	@RequestMapping("/")
 	public List<Person> getAllPersons(){
 		log.info("inside method : personService.getAllPersons");
 		return personService.getAllPersons();
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/api/persons/{id}")
+	@RequestMapping(method = RequestMethod.GET, value = "/{id}")
 	public Person getPerson(@PathVariable String id) {
 		return personService.getPerson(id);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/api/persons")
+	@RequestMapping(method = RequestMethod.POST, value = "/")
 	public void addPerson(@RequestBody Person person) {
 		personService.addPerson(person);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT, value = "/api/persons")
+	@RequestMapping(method = RequestMethod.PUT, value = "/")
 	public void updatePerson(@RequestBody Person person) {
 		personService.updatePerson(person);
 	}

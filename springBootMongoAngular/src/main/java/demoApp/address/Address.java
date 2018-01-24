@@ -1,8 +1,11 @@
 package demoApp.address;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import lombok.Data;
 
 @Data
+@Document(collection = "Address")
 public class Address {
 	
 	private String addressLineOne;

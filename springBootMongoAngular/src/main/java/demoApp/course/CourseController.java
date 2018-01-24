@@ -13,32 +13,33 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*")
+@RequestMapping("/api/courses")
 public class CourseController {
 
 	@Autowired
 	private CourseService CourseService;
 	
-	@RequestMapping("/api/courses")
+	@RequestMapping("/")
 	public List<Course> getAllCourses(){
 		return CourseService.getAllCourses();
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/api/courses/{id}")
+	@RequestMapping(method = RequestMethod.GET, value = "/{id}")
 	public Course getCourse(@PathVariable String id) {
 		return CourseService.getCourse(id);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/api/courses")
+	@RequestMapping(method = RequestMethod.POST, value = "/")
 	public void addCourse(@RequestBody Course course) {
 		CourseService.addCourse(course);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT, value = "/api/courses")
+	@RequestMapping(method = RequestMethod.PUT, value = "/")
 	public void updateCourse(@RequestBody Course course) {
 		CourseService.updateCourse(course);
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE, value = "/api/courses/{id}")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
 	public void deleteCourse(@PathVariable String id) {
 		CourseService.deleteCourse(id);
 	}
