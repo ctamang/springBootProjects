@@ -1,12 +1,13 @@
 package demoApp.hello;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
 	
-	@RequestMapping("api/hello")
+	@RequestMapping(method = RequestMethod.GET, value = "/hello")
 	public String sayHi() {
 		return "hi";
 	}
