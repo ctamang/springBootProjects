@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService} from '../../services/person.service'
 import { Person } from '../../models/person/person';
+import { Address } from '../../models/person/address';
 
 @Component({
   selector: 'app-post-person',
@@ -9,11 +10,13 @@ import { Person } from '../../models/person/person';
 })
 export class PostPersonComponent implements OnInit {
 
-  constructor(private personService : PersonService) { }
+  constructor(private personService : PersonService) {
+   }
 
   ngOnInit() {
+    
   }
-
+  
   addStudent(firstName, lastName, profession, dob, salary, address, hobby, course){
     if(!firstName || !lastName || !profession || !dob || !salary ){
       alert("please fill all the fields");
