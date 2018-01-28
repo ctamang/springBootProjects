@@ -42,12 +42,12 @@ public class PersonController {
 		personService.updatePerson(person);
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE, value = "/api/persons/{id}")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
 	public void deletePerson(@PathVariable String id) {
 		personService.deletePerson(id);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value= "/api/persons/query/{name}")
+	@RequestMapping(method = RequestMethod.GET, value= "/query/{name}")
 	public List<Person> findByName(@PathVariable String name) {
 		log.info("inside " + RequestMethod.GET + "parameters are : /api/persons/query/{name}");
 		return personService.findByName(name);
