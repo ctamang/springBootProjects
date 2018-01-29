@@ -1,0 +1,27 @@
+<h2>Persons</h2>
+<br>
+<br>
+  <button class="btn btn-primary" (click)="onReload()">Reload</button>
+  <div class="card" *ngFor="let person of persons">
+    <div class="card-body">
+        <h3>{{ person.firstName }} {{ person.lastName }}</h3>
+        <h3>{{ person.dateOfBirth }}</h3>
+        <h3>{{ person.address.addressLineOne }}</h3>
+        <h3>{{ person.address.addressLineTwo }}</h3>
+        <h3>{{ person.address.city }}</h3>
+        <h3>{{ person.address.country }}</h3>
+        <h3>{{ person.profession }}</h3>
+        <h3>{{ person.salary }}</h3>
+        <h3>Hobbies</h3>
+          <div class="card" *ngFor="let hobby of person.hobbies">
+              <div class="card-body">
+                  <h2>{{ hobby.name }}</h2>
+              </div>
+          </div>
+        <h3>{{ person.course.name }}</h3>
+        <h3>{{ person.course.description }}</h3>  
+        <button (click)="deletePerson(person)" class="btn btn-danger"><i class="fa fa-remove">Delete</i></button>  
+        <button (click)="updatePerson()" class="btn btn-primary">Update</button>              
+    </div> 
+  </div>  
+     
