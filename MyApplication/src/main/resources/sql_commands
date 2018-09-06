@@ -1,0 +1,10 @@
+insert into book values (10001, 'Kitty Kat', 'Chandan Tamang');
+
+insert into book values (10002, 'Indian Zhones', 'Chandan Tamang');
+
+insert into book values (10003, 'Pre Order Pizza', 'Chandan Tamang');
+
+select * from book
+
+
+http://localhost:8080/h2-console/
